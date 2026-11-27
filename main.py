@@ -39,6 +39,7 @@ def validate(line: str) -> None:
     if len(encoded) > 240:
         raise ValueError("entry encodes to more than 240 bytes")
 
+
 def main() -> None:
     validate(LINE)
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
@@ -47,6 +48,7 @@ def main() -> None:
     with open(path, "w", encoding="utf-8") as handle:
         handle.write(LINE)
     print(f"wrote {path} ({len(LINE)} characters)")
+
 
 if __name__ == "__main__":
     main()
